@@ -4,19 +4,6 @@ from distutils.core import setup
 from os import path
 from setuptools.command.install import install
 
-here = path.abspath(path.dirname(__file__))
-
-# Create rst here from Markdown
-if path.exists(path.join(here, 'README.md')):
-    import pypandoc
-    z = pypandoc.convert('README.md','rst',format='markdown')
-    with open('README.rst','w') as outfile:
-        outfile.write(z)
-
-with open(path.join(here, 'README.rst')) as f:
-    long_description = f.read()
-
-    
 setup(name='hawkular-client',
       version='0.4.4',
       description='Python client to communicate with Hawkular server over HTTP(S)',
